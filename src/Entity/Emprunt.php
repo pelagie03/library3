@@ -18,21 +18,25 @@ class Emprunt
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="date")
      */
     private $date_emprunt;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="date")
      */
     private $date_retour;
 
     /**
+     * @Assert\NotBlank
      * @ORM\ManyToOne(targetEntity=Adherent::class, inversedBy="livreEmprunt")
      */
     private $adherent;
 
     /**
+     * @Assert\NotBlank
      * @ORM\ManyToOne(targetEntity=Livres::class, inversedBy="emprunts")
      * @ORM\JoinColumn(nullable=false)
      */

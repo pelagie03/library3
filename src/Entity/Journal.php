@@ -18,6 +18,7 @@ class Journal extends Document
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="integer")
      */
     private $num_parution;

@@ -14,11 +14,12 @@ class AdherentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('matricule', TextType::class)
-            ->add('nom', TextType::class)
-            ->add('prenom', TextType::class)
+            ->add('matricule', TextType::class, ['required' => true])
+            ->add('nom', TextType::class, ['required' => true])
+            ->add('prenom', TextType::class, ['required' => true])
             ->add('date_naiss', BirthdayType::class, [
-                'placeholder' => 'Select a value'])
+                'placeholder' => 'Choisissez une date'], [
+                'required' => true])
         ;
     }
 

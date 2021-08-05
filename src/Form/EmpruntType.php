@@ -12,21 +12,22 @@ class EmpruntType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date_emprunt', DateType::class)
-            ->add('date_retour', DateType::class)
             ->add('adherent', CollectionType::class, [
                 'entry_type' => AdherentType::class,
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
                 'allow_delete' => true,
-                ])
+                ['required' => true]
+            ])
             ->add('pret', CollectionType::class, [
                 'entry_type' => LivresType::class,
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
                 'allow_delete' => true,
-                ]) //livre
-        ;
+                ['required' => true]
+            ]) //livre
+            ->add('date_emprunt', DateType::class, ['required' => true])
+            ->add('date_retour', DateType::class, ['required' => true]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

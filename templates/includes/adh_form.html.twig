@@ -1,0 +1,28 @@
+{{ form_start(form, {'attr': {'class': 'row'}}) }}
+	<div class="input-field col s12 m12 l12">
+		{{ form_widget(form.matricule) }}
+        {{ form_label(form.matricule, 'Matricule de l\'adhérent') }}
+		<span class="error">{{ form_errors(form.matricule) }}</span>
+	</div>
+
+	<div class="input-field col s12 m6 l6">
+		{{ form_widget(form.nom) }}
+		{{ form_label(form.nom, 'Nom') }}
+		<span class="error">{{ form_errors(form.nom) }}</span>
+	</div>
+
+    <div class="input-field col s12 m12 l12">
+		{{ form_widget(form.prenom) }}
+        {{ form_label(form.prenom, 'Prénom') }}
+		<span class="error">{{ form_errors(form.prenom) }}</span>
+	</div>
+    <div class="input-field col s12 m12 l12">
+		{{ form_widget(form.date_naiss) }}
+        {{ form_label(form.date_naiss, 'Date de naissance') }}
+		<span class="error">{{ form_errors(form.date_naiss) }}</span>
+	</div>
+
+	<div class="input-field col s12 m12 l12">
+		<input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+	</div>
+{{ form_end(form) }}

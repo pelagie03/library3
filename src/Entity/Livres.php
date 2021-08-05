@@ -20,6 +20,7 @@ class Livres extends Volume
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=20)
      */
     private $isbn;
@@ -30,6 +31,7 @@ class Livres extends Volume
     private $disponible;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=30)
      */
     private $genre;

@@ -13,53 +13,9 @@
 
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        {{ form_start(adherent) }}
-                        <div class="form-group">
-                            {{ form_errors(adherent.matricule) }}
-                            {{ form_label(adherent.matricule, 'Matricule') }}
-                            {{ form_widget(adherent.matricule, {'attr': {'class': 'form-control'}}) }}
-                        </div>
-                        <br />
-                        <div class="form-group">
-                            {{ form_errors(adherent.nom) }}
-                            {{ form_label(adherent.nom, 'Nom') }}
-                            {{ form_widget(adherent.nom, {'attr': {'class': 'form-control'}}) }}
-                        </div>
-                        <br />
-                        <div class="form-group">
-                            {{ form_errors(adherent.prenom) }}
-                            {{ form_label(adherent.prenom, 'Prenom') }}
-                            {{ form_widget(adherent.prenom, {'attr': {'class': 'form-control'}}) }}
-                        </div>
-                        <br />
-                        <div class="form-group">
-                            {{ form_errors(adherent.date_naiss) }}
-                            {{ form_label(adherent.date_naiss, 'Date de naissance') }}
-                            {{ form_widget(adherent.date_naiss, {'attr': {'class': 'form-control'}}) }}
-                        </div>
-                        <br />
-                        {{ form_end(country) }}
+                        {% include "templates/includes/adh_form.html.twig" %}
                     </div>
                 </div>
-                {#  <form>
-                    <div class="form-group">
-                        <label for="matricule">Matricule</label>
-                        <input type="text" class="form-control" id="matricule" placeholder="A001">
-                    </div>
-                    <div class="form-group">
-                        <label for="nom"> Nom: </label>
-                        <input type="text" class="form-control" id="nom" placeholder="nom de l'adhérent">
-                    </div>
-                    <div class="form-group">
-                        <label for="prenom"> Prénom: </label>
-                        <input type="text" class="form-control" id="prenom" placeholder="prenom de l'adhérent">
-                    </div>
-                    <div class="form-group">
-                        <label for="naissance">Date de naissance:</label>
-                        <input type="date" id="naissance" name="date_naiss" value="2018-07-22" min="1920-01-01">
-                    </div>
-
-                </form> #}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Save </button>

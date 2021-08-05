@@ -1,0 +1,29 @@
+{{ form_start(form, {'attr': {'class': 'row'}}) }}
+	<div class="input-field col s12 m12 l12">
+		{{ form_widget(form.adherent) }}
+        {{ form_label(form.adherent, 'Adhérent') }}
+		<span class="error">{{ form_errors(form.adherent) }}</span>
+	</div>
+
+	<div class="input-field col s12 m6 l6">
+		{{ form_widget(form.pret) }}
+		{{ form_label(form.pret, 'Livre emprunté') }}
+		<span class="error">{{ form_errors(form.pret) }}</span>
+	</div>
+
+    <div class="input-field col s12 m12 l12">
+		{{ form_widget(form.date_emprunt) }}
+        {{ form_label(form.date_emprunt, 'Date d\'emprunt') }}
+		<span class="error">{{ form_errors(form.date_emprunt) }}</span>
+	</div>
+
+    <div class="input-field col s12 m12 l12">
+		{{ form_widget(form.date_retour) }}
+        {{ form_label(form.date_retour, 'Date de retrait') }}
+		<span class="error">{{ form_errors(form.date_retour) }}</span>
+	</div>
+
+	<div class="input-field col s12 m12 l12">
+		<input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+	</div>
+{{ form_end(form) }}

@@ -13,8 +13,8 @@ class JournalType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre', TextType::class)
-            ->add('num_parution', IntegerType::class)
+            ->add('titre', TextType::class, ['required' => true])
+            ->add('num_parution', IntegerType::class, ['required' => true])
         ;
     }
 

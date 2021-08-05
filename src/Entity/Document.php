@@ -21,6 +21,7 @@ class Document
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=50)
      */
     private $titre;

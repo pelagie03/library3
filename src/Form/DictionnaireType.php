@@ -12,9 +12,9 @@ class DictionnaireType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre', TextType::class)
-            ->add('auteur', TextType::class)
-            ->add('annee_edition', DateType::class)
+            ->add('titre', TextType::class, ['required' => true])
+            ->add('auteur', TextType::class, ['required' => true])
+            ->add('annee_edition', DateType::class, ['required' => true])
         ;
     }
 

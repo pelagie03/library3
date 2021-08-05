@@ -18,6 +18,7 @@ class Dictionnaire extends Volume
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="date")
      */
     private $annee_edition;

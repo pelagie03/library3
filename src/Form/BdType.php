@@ -12,9 +12,9 @@ class BdType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre', TextType::class)
-            ->add('auteur', TextType::class)
-            ->add('dessinateur', TextType::class)
+            ->add('titre', TextType::class, ['required' => true])
+            ->add('auteur', TextType::class, ['required' => true])
+            ->add('dessinateur', TextType::class, ['required' => true])
         ;
     }
 

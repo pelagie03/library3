@@ -20,26 +20,31 @@ class Adherent
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="integer")
      */
     private $matricule;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=50)
      */
     private $nom;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=50)
      */
     private $prenom;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="date")
      */
     private $date_naiss;
 
     /**
+     * @Assert\NotBlank
      * @ORM\OneToMany(targetEntity=Emprunt::class, mappedBy="adherent")
      */
     private $livreEmprunt;

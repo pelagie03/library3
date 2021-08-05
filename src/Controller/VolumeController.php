@@ -11,7 +11,7 @@ class VolumeController extends AbstractController
     #[Route('/volume', name: 'volume')]
     public function index(): Response
     {
-        return $this->render('volume/index.html.twig', [
+        return $this->render('document/index.html.twig', [
             'controller_name' => 'VolumeController',
         ]);
     }

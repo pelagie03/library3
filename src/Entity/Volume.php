@@ -21,6 +21,7 @@ class Volume extends Document
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=100)
      */
     private $auteur;

@@ -13,11 +13,11 @@ class LivresType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre', TextType::class)
-            ->add('auteur', TextType::class)
-            ->add('isbn', TextType::class)
-            ->add('disponible', CheckboxType::class)
-            ->add('genre', TextType::class)
+            ->add('titre', TextType::class, ['required' => true])
+            ->add('auteur', TextType::class, ['required' => true])
+            ->add('isbn', TextType::class, ['required' => true])
+            ->add('disponible', CheckboxType::class, ['required' => false])
+            ->add('genre', TextType::class, ['required' => true])
         ;
     }
 
