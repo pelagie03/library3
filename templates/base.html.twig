@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title%} ACCUEIL &mdash; Bibliothèque Municipale {% endblock title%}</title>
+        <title>{% block title%} Bibliothèque Municipale {% endblock title%}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="fonts/icomoon/style.css">
+        <link rel="stylesheet" href="public/Assets/fonts/icomoon/style.css">
 
-        {%block stylesheets%}
+        {% block stylesheets %}
         
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <link rel="stylesheet" href="css/jquery-ui.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="public/Assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/Assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="public/Assets/css/jquery-ui.css">
+        <link rel="stylesheet" href="public/Assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="public/Assets/css/owl.theme.default.min.css">
 
-        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="public/Assets/css/bootstrap-datepicker.css">
 
-        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="public/Assets/fonts/flaticon/font/flaticon.css">
 
-        <link rel="stylesheet" href="css/aos.css">
-        <link rel="stylesheet" href="css/rangeslider.css">
+        <link rel="stylesheet" href="public/Assets/css/aos.css">
+        <link rel="stylesheet" href="public/Assets/css/rangeslider.css">
 
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="public/Assets/css/style.css">
 
         {% endblock %}
 
@@ -53,7 +53,8 @@
                         </div>
                         <div class="col-12 col-md-10 d-none d-xl-block">
                             <nav class="site-navigation position-relative text-right" role="navigation">
-
+                            
+                            {% block navigation %}
                                 <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                                     <li class="active"><a href="accueil.html"><span>ACCUEIL</span></a></li>
                                     <li><a href="livre.html"><span>LIVRES</span></a></li>
@@ -73,6 +74,8 @@
                                         </ul>
                                     </li>
                                 </ul>
+                            {% endblock %}
+
                             </nav>
                         </div>
                         <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
@@ -217,23 +220,23 @@
             </footer>
         </div>
     
-    {% endblock %}
+            {% endblock %}
 
     {% block scripts %}
 
-            <script src="js/jquery-3.3.1.min.js"></script>
-            <script src="js/jquery-migrate-3.0.1.min.js"></script>
-            <script src="js/jquery-ui.js"></script>
-            <script src="js/popper.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/owl.carousel.min.js"></script>
-            <script src="js/jquery.stellar.min.js"></script>
-            <script src="js/jquery.countdown.min.js"></script>
-            <script src="js/jquery.magnific-popup.min.js"></script>
-            <script src="js/bootstrap-datepicker.min.js"></script>
-            <script src="js/aos.js"></script>
-            <script src="js/rangeslider.min.js"></script>
-            <script src="js/typed.js"></script>
+            <script src="public/Assets/js/jquery-3.3.1.min.js"></script>
+            <script src="public/Assets/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="public/Assets/js/jquery-ui.js"></script>
+            <script src="public/Assets/js/popper.min.js"></script>
+            <script src="public/Assets/js/bootstrap.min.js"></script>
+            <script src="public/Assets/js/owl.carousel.min.js"></script>
+            <script src="public/Assets/js/jquery.stellar.min.js"></script>
+            <script src="public/Assets/js/jquery.countdown.min.js"></script>
+            <script src="public/Assets/js/jquery.magnific-popup.min.js"></script>
+            <script src="public/Assets/js/bootstrap-datepicker.min.js"></script>
+            <script src="public/Assets/js/aos.js"></script>
+            <script src="public/Assets/js/rangeslider.min.js"></script>
+            <script src="public/Assets/js/typed.js"></script>
             <script>
                 var typed = new Typed('.typed-words', {
                     strings: ["Appartments", " Restaurants", " Hotels", " Events"],
@@ -245,7 +248,7 @@
                     showCursor: true
                 });
             </script>
-            <script src="js/main.js"></script>
+            <script src="public/Assets/js/main.js"></script>
     {%endblock%}
 
     </body>

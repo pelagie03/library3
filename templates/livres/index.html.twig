@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LivresController!{% endblock %}
+{% block title %}LIVRES &mdash; | {{ parent() }}{% endblock %}
 
-{% block body %}
-<style>
+
+{# <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    </style>
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
@@ -16,5 +16,120 @@
         <li>Your controller at <code><a href="{{ 'C:/Users/hp/Documents/UCAO-UUT COURS/Licence 3/Semestre 2/ProjetMIDA/New_project/library3/src/Controller/LivresController.php'|file_link(0) }}">src/Controller/LivresController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/Users/hp/Documents/UCAO-UUT COURS/Licence 3/Semestre 2/ProjetMIDA/New_project/library3/templates/livres/index.html.twig'|file_link(0) }}">templates/livres/index.html.twig</a></code></li>
     </ul>
+</div> #}
+
+    {% block liens de navigation %}
+
+                            <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                                <li><a href="accueil.html"><span>ACCUEIL</span></a></li>
+                                <li class="active"><a href="livre.html"><span>LIVRES</span></a></li>
+                                <li class="has-children">
+                                    <a href="adherent.html"><span>ADHERENTS</span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">LISTE DES ADHERENTS</a></li>
+                                        <li><a href="#">INSCRIPTION</a></li>
+                                        <li><a href="#">EMPRUNTS</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="document.html"><span>DOCUMENTS</span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">JOURNAL</a></li>
+                                        <li><a href="#">VOLUME</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+    {% endblock %}
+    
+{% block content %}
+
+<div class="container">
+        <div class="row">
+
+            <!--Formulaire ajout de livre-->
+            <div class="col">
+                <form>
+                    <div class="form-group">
+                        <label for="titre">Titre</label>
+                        <input type="text" class="form-control" id="titre" placeholder="Boutons et dentelle">
+                    </div>
+                    <div class="form-group">
+                        <label for="auteur"> Auteur: </label>
+                        <input type="text" class="form-control" id="auteur" placeholder="Penelope Sky">
+                    </div>
+                    <div class="form-group">
+                        <label for="isbn"> ISBN: </label>
+                        <input type="text" class="form-control" id="isbn" placeholder="123-456-789">
+                    </div>
+                    <label for="check"> Disponible: </label>
+                    <div class="form-check" id="check">
+                        <input class="form-check-input" type="radio" name="disponible" id="disponibilité" value="option1" checked>
+                        <label class="form-check-label" for="disponibilité">
+                          Oui
+                        </label>
+                    </div>
+                    <div class="form-check" id="check2">
+                        <input class="form-check-input" type="radio" name="disponible" id="disponibilité2" value="option2" checked>
+                        <label class="form-check-label" for="disponibilité">
+                          Non
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre:</label>
+                        <input type="text" id="genre" name="genreLivre" placeholder="jeune adulte">
+                    </div>
+                </form>
+            </div>
+            <!--Tableau: liste des livres-->
+            <div class="col ">
+                <table class="table">
+                    <caption>Liste des livres</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">N°</th>
+                            <th scope="col">Titre</th>
+                            <th scope="col">Auteur</th>
+                            <th scope="col">ISBN</th>
+                            <th scope="col">Edition</th>
+                            <th scope="col">Disponibilité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row ">
+            <!--Liste des emprunts: tableau-->
+
+            <table class="table">
+                <caption>Liste des emprunts</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Matricule</th>
+                        <th scope="col">Livre ISBN</th>
+                        <th scope="col">Date d'emprunt</th>
+                        <th scope="col">Date de retour</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 </div>
 {% endblock %}

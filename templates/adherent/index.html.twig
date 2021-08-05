@@ -1,9 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdherentController!{% endblock %}
+{% block title %}ADHERENTS &mdash; {{ parent() }}{% endblock %}
 
-{% block body %}
-<style>
+{# <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
@@ -16,5 +15,78 @@
         <li>Your controller at <code><a href="{{ 'C:/Users/hp/Documents/UCAO-UUT COURS/Licence 3/Semestre 2/ProjetMIDA/New_project/library3/src/Controller/AdherentController.php'|file_link(0) }}">src/Controller/AdherentController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/Users/hp/Documents/UCAO-UUT COURS/Licence 3/Semestre 2/ProjetMIDA/New_project/library3/templates/adherent/index.html.twig'|file_link(0) }}">templates/adherent/index.html.twig</a></code></li>
     </ul>
-</div>
+</div> #}
+{% block entête %}
+    {% block navigation %}
+                            <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                                <li><a href="accueil.html"><span>ACCUEIL</span></a></li>
+                                <li><a href="livre.html"><span>LIVRES</span></a></li>
+                                <li class="has-children active">
+                                    <a href="adherent.html"><span>ADHERENTS</span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">LISTE DES ADHERENTS</a></li>
+                                        <li><a href="#">INSCRIPTION</a></li>
+                                        <li><a href="#">EMPRUNTS</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="document.html"><span>DOCUMENTS</span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">JOURNAL</a></li>
+                                        <li><a href="#">VOLUME</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+    {% endblock %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+        <div class="row">
+            <!--Tableau: liste des adhérents-->
+            <table class="table">
+                <caption>Liste des adhérents</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">Matricule</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">date de naissance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row ">
+
+        <!--Formulaire d'emprunt-->
+        <form>
+            <div class="form-group">
+                <label for="matri">Matricule:</label>
+                <input type="text" class="form-control" id="matri" placeholder="A001">
+            </div>
+            <div class="form-group">
+                <label for="isbn"> ISBN: </label>
+                <input type="text" class="form-control" id="isbn" placeholder="123-456-789">
+            </div>
+            <div class="form-group">
+                <label for="emprunt">Date d'emprunt:</label>
+                <input type="date" id="emprunt" name="date_emprunt" value="2018-07-22">
+            </div>
+            <div class="form-group">
+                <label for="retour">Date de retour:</label>
+                <input type="date" id="retour" name="date_retour" value="2018-07-22">
+            </div>
+        </form>
+    </div>
 {% endblock %}
