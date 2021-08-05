@@ -14,8 +14,18 @@ class EmpruntType extends AbstractType
         $builder
             ->add('date_emprunt', DateType::class)
             ->add('date_retour', DateType::class)
-            ->add('adherent', TextType::class)
-            ->add('pret', TextType::class) //livre
+            ->add('adherent', CollectionType::class, [
+                'entry_type' => AdherentType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
+                'allow_delete' => true,
+                ])
+            ->add('pret', CollectionType::class, [
+                'entry_type' => LivresType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
+                'allow_delete' => true,
+                ]) //livre
         ;
     }
 

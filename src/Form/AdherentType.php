@@ -17,7 +17,8 @@ class AdherentType extends AbstractType
             ->add('matricule', TextType::class)
             ->add('nom', TextType::class)
             ->add('prenom', TextType::class)
-            ->add('date_naiss', DateType::class)
+            ->add('date_naiss', BirthdayType::class, [
+                'placeholder' => 'Select a value'])
         ;
     }
 
