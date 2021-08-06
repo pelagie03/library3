@@ -21,8 +21,7 @@
         {{ form_label(form.date_naiss, 'Date de naissance') }}
 		<span class="error">{{ form_errors(form.date_naiss) }}</span>
 	</div>
-
-	<div class="input-field col s12 m12 l12">
-		<input type="submit" name="" value="Enregistrer" class="btn btn-primary">
-	</div>
+	{% block boutons %}
+	
+	{% endblock %}
 {{ form_end(form) }}

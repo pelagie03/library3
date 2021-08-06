@@ -15,7 +15,7 @@ class JournalType extends AbstractType
     {
         $builder
             ->add('titre', TextType::class, ['required' => true])
-            ->add('num_parution', IntegerType::class, ['required' => true])
+            ->add('numparution', IntegerType::class, ['required' => true])
         ;
     }
 

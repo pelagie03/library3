@@ -18,8 +18,12 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save </button>
-                <button type="button" class="btn btn-secondary">Change</button>
+                {% block boutons %}
+	            <div class="input-field col s12 m12 l12">
+		            <input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+		            <input type="submit" value= "Modifier" class="btn btn-secondary">
+	            </div>
+	            {% endblock %}
             </div>
         </div>
     </div>
