@@ -11,11 +11,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BdController extends AbstractController
 {
-    #[Route('/bd', name: 'bd')]
+    #[Route('/document', name: 'bd')]
     public function index(): Response
     {
+        $bd = new Bd();
+        $form = $this->createForm(BdType::class, $bd);
         return $this->render('document/index.html.twig', [
-            'controller_name' => 'BdController',
+            'form' => $form->createView()
         ]);
     }
     public function ajoutBd(Request $request)

@@ -11,11 +11,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DictionnaireController extends AbstractController
 {
-    #[Route('/dictionnaire', name: 'dictionnaire')]
+    #[Route('/document', name: 'dictionnaire')]
     public function index(): Response
     {
-        return $this->render('document/index.html.twig', [
+        $dico = new Dictionnaire();
+        $form = $this->createForm(DictionnaireType::class, $dico);
+        /*return $this->render('document/index.html.twig', [
             'controller_name' => 'DictionnaireController',
+        ]);*/
+        return $this->render('document/index.html.twig', [
+            'form' => $form->createView()
         ]);
     }
     public function ajoutDico(Request $request)

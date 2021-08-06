@@ -14,12 +14,18 @@ class LivresController extends AbstractController
     #[Route('/livres', name: 'livres')]
     public function index(): Response
     {
-        return $this->render('livres/index.html.twig', [
+        $livre = new Livres();
+        $form = $this->createForm(LivresType::class, $livre);
+
+        /*return $this->render('livres/index.html.twig', [
             'controller_name' => 'LivresController',
+        ]);*/
+        return $this->render('livres/index.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 
-    public function ajoutLivre(Request $request)
+    public function ajoutLivre(Request $request): Response
     {
         $livre = new Livres();
         $form = $this->createForm(LivresType::class, $livre);

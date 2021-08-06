@@ -12,12 +12,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class JournalController extends AbstractController
 {
-    #[Route('/journal', name: 'journal')]
+    #[Route('/document', name: 'journal')]
     public function index(): Response
     {
+        $journal = new Journal();
+        $form = $this->createForm(JournalType::class, $journal);
         return $this->render('document/index.html.twig', [
-            'controller_name' => 'JournalController',
+            'form' => $form->createView()
         ]);
+        /*return $this->render('document/index.html.twig', [
+            'controller_name' => 'JournalController',
+        ]);*/
     }
     public function ajoutJournal(Request $request)
     {

@@ -14,12 +14,17 @@ class AdherentController extends AbstractController
     #[Route('/adherent', name: 'adherent')]
     public function index(): Response
     {
-        return $this->render('adherent/index.html.twig', [
-            'controller_name' => 'AdherentController',
+        $adh = new Adherent();
+        $form = $this->createForm(AdherentType::class, $adh);
+        return $this->render('adherent/inscription.html.twig', [
+            'form' => $form->createView()
         ]);
+        /*return $this->render('adherent/index.html.twig', [
+            'controller_name' => 'AdherentController',
+        ]);*/
     }
 
-    public function ajoutAdherent(Request $request)
+    public function ajoutAdherent(Request $request): Response
     {
         $adh = new Adherent();
         $form = $this->createForm(AdherentType::class, $adh);

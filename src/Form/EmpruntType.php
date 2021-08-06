@@ -4,12 +4,15 @@ namespace App\Form;
 
 use App\Entity\Emprunt;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class EmpruntType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('adherent', CollectionType::class, [
@@ -17,7 +20,7 @@ class EmpruntType extends AbstractType
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
                 'allow_delete' => true,
-                ['required' => true]
+                'required' => true
             ])
             ->add('pret', CollectionType::class, [
                 'entry_type' => LivresType::class,
@@ -30,7 +33,7 @@ class EmpruntType extends AbstractType
             ->add('date_retour', DateType::class, ['required' => true]);
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Emprunt::class,

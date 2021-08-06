@@ -14,11 +14,14 @@ class EmpruntController extends AbstractController
     #[Route('/emprunt', name: 'emprunt')]
     public function index(): Response
     {
+
+        $emprunt = new Emprunt();
+        $form = $this->createForm(EmpruntType::class, $emprunt);
         return $this->render('adherent/index.html.twig', [
-            'controller_name' => 'EmpruntController',
+            'form' => $form->createView()
         ]);
     }
-    public function emprunter(Request $request)
+    public function emprunter(Request $request): Response
     {
         $emprunt = new Emprunt();
         $form = $this->createForm(EmpruntType::class, $emprunt);
