@@ -32,7 +32,7 @@ class AdherentController extends AbstractController
         ]);
     }
 
-    #[Route('/adherent', name: 'adherent', methods: 'GET')]
+    #[Route('/adherent', name: 'adhlist', methods: 'GET')]
     public function list(RepositoryAdherentRepository $adhRepository): Response
     {
         return $this->render('adherent/_tableau.html.twig', ['adherent' => $adhRepository->findAll()]);

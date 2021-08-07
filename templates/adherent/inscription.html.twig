@@ -1,0 +1,61 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}INSCRIPTION &mdash; {{ parent() }}{% endblock %}
+
+{% block entête %}
+{% block navigation %}
+                            <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                                <li><a href="accueil.html"><span>ACCUEIL</span></a></li>
+                                <li><a href="livre.html"><span>LIVRES</span></a></li>
+                                <li class="has-children active">
+                                    <a href="adherent.html"><span>ADHERENTS</span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">LISTE DES ADHERENTS</a></li>
+                                        <li><a href="#">INSCRIPTION</a></li>
+                                        <li><a href="#">EMPRUNTS</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="document.html"><span>DOCUMENTS</span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">JOURNAL</a></li>
+                                        <li><a href="#">VOLUME</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+<!-- Modal used in order to add a subscriber -->
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">INSCRIPTION: Ajouter un adhérent</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        {% include "includes/adh_form.html.twig" %}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="input-field col s12 m12 l12">
+                    <input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+                    <input type="submit" value= "Modifier" class="btn btn-warning">
+                    <input type="button" value= "Supprimer" class="btn btn-danger">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class EmpruntController extends AbstractController
 {
-    #[Route('/adherent', name: 'emp_ajout')]
+    #[Route('/adherent', name: 'emprunt')]
     public function emprunter(Request $request): Response
     {
         $emprunt = new Emprunt();

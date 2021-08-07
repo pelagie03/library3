@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LivresController extends AbstractController
 {
-    #[Route('/livres', name: 'livres')]
+    #[Route('/livres', name: 'livres', methods: 'GET|POST')]
     public function ajoutLivre(Request $request): Response
     {
         $livre = new Livres();
