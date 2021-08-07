@@ -6,19 +6,23 @@
 </div>
 
 <div class="input-field col s12 m6 l6">
-	{{ form_widget(form.auteur, {'attr': {'placeholder': 'Boutons et dentelles'}}) }}
+	
 	{{ form_label(form.auteur, 'Nom de l\'auteur') }}
-		<span class="error">{{ form_errors(form.auteur) }}</span>
+	{{ form_widget(form.auteur, {'attr': {'placeholder': 'Boutons et dentelles'}}) }}
+	<span class="error">{{ form_errors(form.auteur) }}</span>
 	</div>
 
 	<div class="input-field col s12 m6 l6">
-		{{ form_widget(form.isbn) }}
+		
 		{{ form_label(form.isbn, 'ISBN') }}
+		{{ form_widget(form.isbn) }}
+		
 		<span class="error">{{ form_errors(form.isbn) }}</span>
 	</div>
     <div class="input-field col s12 m12 l12">
-		{{ form_widget(form.genre, {'attr': {'placeholder': 'Jeune adulte'}}) }}
 		{{ form_label(form.genre, 'Genre') }}
+		{{ form_widget(form.genre, {'attr': {'placeholder': 'Jeune adulte'}}) }}
+		
 		<span class="error">{{ form_errors(form.genre) }}</span>
 	</div>
 	<div class="input-field col s12 m12 l12">

@@ -1,23 +1,27 @@
 {{ form_start(form, {'attr': {'class': 'row'}}) }}
 	<div class="input-field col s12 m12 l12">
-		{{ form_widget(form.titre) }}
+		
         {{ form_label(form.titre, 'Titre du dictionnaire') }}
+		{{ form_widget(form.titre) }}
 		<span class="error">{{ form_errors(form.titre) }}</span>
 	</div>
 
 	<div class="input-field col s12 m6 l6">
-		{{ form_widget(form.auteur) }}
+		
 		{{ form_label(form.auteur, 'Auteur du dictionnaire') }}
+		{{ form_widget(form.auteur) }}
 		<span class="error">{{ form_errors(form.auteur) }}</span>
 	</div>
 
     <div class="input-field col s12 m12 l12">
-		{{ form_widget(form.annee_edition) }}
         {{ form_label(form.annee_edition, 'Année d\'édition') }}
+		{{ form_widget(form.annee_edition) }}
 		<span class="error">{{ form_errors(form.annee_edition) }}</span>
 	</div>
 
 	<div class="input-field col s12 m12 l12">
 		<input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+		<input type="submit" value= "Modifier" class="btn btn-warning">
+        <input type="button" value= "Supprimer" class="btn btn-danger">
 	</div>
 {{ form_end(form) }}

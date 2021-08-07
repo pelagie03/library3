@@ -1,23 +1,28 @@
 {{ form_start(form, {'attr': {'class': 'row'}}) }}
 	<div class="input-field col s12 m12 l12">
+
+		{{ form_label(form.titre, 'Titre de la BD') }}
 		{{ form_widget(form.titre) }}
-        {{ form_label(form.titre, 'Titre de la BD') }}
 		<span class="error">{{ form_errors(form.titre) }}</span>
 	</div>
 
 	<div class="input-field col s12 m6 l6">
-		{{ form_widget(form.auteur) }}
+
 		{{ form_label(form.auteur, 'Auteur de la BD') }}
+		{{ form_widget(form.auteur) }}
 		<span class="error">{{ form_errors(form.auteur) }}</span>
 	</div>
 
-    <div class="input-field col s12 m12 l12">
+	<div class="input-field col s12 m12 l12">
+
+		{{ form_label(form.dessinateur, 'Nom du dessinateur') }}
 		{{ form_widget(form.dessinateur) }}
-        {{ form_label(form.dessinateur, 'Nom du dessinateur') }}
 		<span class="error">{{ form_errors(form.dessinateur) }}</span>
 	</div>
 
 	<div class="input-field col s12 m12 l12">
 		<input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+		<input type="submit" value= "Modifier" class="btn btn-warning">
+		<input type="button" value= "Supprimer" class="btn btn-danger">
 	</div>
 {{ form_end(form) }}

@@ -1,29 +1,35 @@
 {{ form_start(form, {'attr': {'class': 'row'}}) }}
 	<div class="input-field col s12 m12 l12">
-		{{ form_widget(form.adherent) }}
+		
         {{ form_label(form.adherent, 'Adhérent') }}
+		{{ form_widget(form.adherent) }}
 		<span class="error">{{ form_errors(form.adherent) }}</span>
 	</div>
 
 	<div class="input-field col s12 m6 l6">
-		{{ form_widget(form.pret) }}
+		
 		{{ form_label(form.pret, 'Livre emprunté') }}
+		{{ form_widget(form.pret) }}
 		<span class="error">{{ form_errors(form.pret) }}</span>
 	</div>
 
     <div class="input-field col s12 m12 l12">
-		{{ form_widget(form.date_emprunt) }}
+		
         {{ form_label(form.date_emprunt, 'Date d\'emprunt') }}
+		{{ form_widget(form.date_emprunt) }}
 		<span class="error">{{ form_errors(form.date_emprunt) }}</span>
 	</div>
 
     <div class="input-field col s12 m12 l12">
-		{{ form_widget(form.date_retour) }}
+		
         {{ form_label(form.date_retour, 'Date de retrait') }}
+		{{ form_widget(form.date_retour) }}
 		<span class="error">{{ form_errors(form.date_retour) }}</span>
 	</div>
 
 	<div class="input-field col s12 m12 l12">
 		<input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+		<input type="submit" value= "Modifier" class="btn btn-warning">
+        <input type="button" value= "Supprimer" class="btn btn-danger">
 	</div>
 {{ form_end(form) }}
