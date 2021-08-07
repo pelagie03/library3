@@ -1,0 +1,43 @@
+{% block livList %}
+	<h3>Liste des livres</h3>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">N°</th>
+				<th scope="col">Titre</th>
+				<th scope="col">Auteur</th>
+				<th scope="col">ISBN</th>
+				<th scope="col">Genre</th>
+				<th scope="col">Disponibilité</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for livre in livres %}
+				<tr>
+					<td>{{ livres.id }}</td>
+					<td>{{ livres.titre }}</td>
+					<td>{{ livres.auteur }}</td>
+					<td>{{ livres.isbn }}</td>
+					<td>{{ livres.genre }}</td>
+                    <td>{{ livres.disponible }}</td>
+					<td>
+						<a href="{{ path('liv_edit', {'titre': livres.titre, 'auteur': livres.titre, 'isbn': livres.isbn, 'genre': livres.genre, 'disponible': livres.disponible}) }}">modifier</a>
+						<a href="{{ path('liv_del', {'titre': livres.titre, 'auteur': livres.titre, 'isbn': livres.isbn, 'genre': livres.genre, 'disponible': livres.disponible}) }}">supprimer</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="2">no records found</td>
+					<td colspan="2">no records found</td>
+					<td colspan="2">no records found</td>
+					<td colspan="2">no records found</td>
+					<td colspan="2">no records found</td>
+					<td colspan="2">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('liv_ajout') }}">Ajouter</a>
+{% endblock %}

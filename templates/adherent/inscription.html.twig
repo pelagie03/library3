@@ -1,5 +1,5 @@
 <!-- Modal used in order to add a subscriber -->
-
+{% extends "base.html.twig" %}
 <div class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -21,7 +21,8 @@
                 {% block boutons %}
 	            <div class="input-field col s12 m12 l12">
 		            <input type="submit" name="" value="Enregistrer" class="btn btn-primary">
-		            <input type="submit" value= "Modifier" class="btn btn-secondary">
+		            <input type="submit" value= "Modifier" class="btn btn-warning">
+                    <input type="button" value= "Supprimer" class="btn btn-danger">
 	            </div>
 	            {% endblock %}
             </div>

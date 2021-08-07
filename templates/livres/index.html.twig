@@ -1,92 +1,81 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}LIVRES &mdash; | {{ parent() }}{% endblock %}
+{% block title %}LIVRES &mdash;
+	{{ parent() }}
+{% endblock %}
 
 
 {% block entête %}
-    {% block navigation %}
+	{% block navigation %}
 
-                            <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                                <li><a href="accueil.html"><span>ACCUEIL</span></a></li>
-                                <li class="active"><a href="livre.html"><span>LIVRES</span></a></li>
-                                <li class="has-children">
-                                    <a href="adherent.html"><span>ADHERENTS</span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">LISTE DES ADHERENTS</a></li>
-                                        <li><a href="#">INSCRIPTION</a></li>
-                                        <li><a href="#">EMPRUNTS</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-children">
-                                    <a href="document.html"><span>DOCUMENTS</span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">JOURNAL</a></li>
-                                        <li><a href="#">VOLUME</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+		<ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+			<li>
+				<a href="accueil.html">
+					<span>ACCUEIL</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="livre.html">
+					<span>LIVRES</span>
+				</a>
+			</li>
+			<li class="has-children">
+				<a href="adherent.html">
+					<span>ADHERENTS</span>
+				</a>
+				<ul class="dropdown">
+					<li>
+						<a href="#">LISTE DES ADHERENTS</a>
+					</li>
+					<li>
+						<a href="#">INSCRIPTION</a>
+					</li>
+					<li>
+						<a href="#">EMPRUNTS</a>
+					</li>
+				</ul>
+			</li>
+			<li class="has-children">
+				<a href="document.html">
+					<span>DOCUMENTS</span>
+				</a>
+				<ul class="dropdown">
+					<li>
+						<a href="#">JOURNAL</a>
+					</li>
+					<li>
+						<a href="#">VOLUME</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
 
-    {% endblock %}
+	{% endblock %}
 {% endblock %}
-    
+
 {% block content %}
 
-<div class="container">
-        <div class="row">
+	<div class="container">
+		<div
+			class="row">
 
-            <!--Formulaire ajout de livre-->
-            <div class="col">
-               {% include "includes/liv_form.html.twig" %}
-            </div>
-            <!--Tableau: liste des livres-->
-            <div class="col ">
-                <table class="table">
-                    <caption>Liste des livres</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">N°</th>
-                            <th scope="col">Titre</th>
-                            <th scope="col">Auteur</th>
-                            <th scope="col">ISBN</th>
-                            <th scope="col">Edition</th>
-                            <th scope="col">Disponibilité</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="row ">
-            <!--Liste des emprunts: tableau-->
+			<!--Formulaire ajout de livre-->
+			<div class="col">
+				{% include "includes/liv_form.html.twig" %}
+			</div>
+			<!--Tableau: liste des livres-->
+			<div class="col ">
+				{% block livList %}
+					{% include "tabLiv.html.twig" %}
+				{% endblock %}
+			</div>
+		</div>
+		<div>
+			<!--Liste des emprunts: tableau-->
+			{% block empList %}
+				{% include "emprunt/index.html.twig" %}
+			{% endblock %}
 
-            <table class="table">
-                <caption>Liste des emprunts</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Matricule</th>
-                        <th scope="col">Livre ISBN</th>
-                        <th scope="col">Date d'emprunt</th>
-                        <th scope="col">Date de retour</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-</div>
+		</div>
+	</div>
 {% endblock %}

@@ -30,27 +30,9 @@
 <div class="container">
         <div class="row">
             <!--Tableau: liste des adhérents-->
-            <table class="table">
-                <caption>Liste des adhérents</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">N°</th>
-                        <th scope="col">Matricule</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Prénom</th>
-                        <th scope="col">date de naissance</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                </tbody>
-            </table>
+            {% block adhList %}
+                {% include "_tableau.html.twig" %}
+            {% endblock %}            
         </div>
     </div>
     <div class="row ">
