@@ -6,6 +6,7 @@ use App\Entity\Emprunt;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -26,10 +27,14 @@ class EmpruntType extends AbstractType
                 'entry_options' => ['label' => false],
                 'allow_add' => false,
                 'allow_delete' => false,
-                ['required' => true]
+                'required' => true
             ]) //livre
-            ->add('date_emprunt', DateType::class, ['required' => true])
-            ->add('date_retour', DateType::class, ['required' => true]);
+            ->add('dateEmp', DateType::class, ['required' => true])
+            ->add('dateRet', DateType::class, ['required' => true])
+            ->add('save', SubmitType::class, [
+                'label' => "Enregistrer",
+                'attr' => ['class' => 'btn btn-square btn-success']
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

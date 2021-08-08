@@ -19,10 +19,9 @@ class Dictionnaire extends Volume
     private $id;
 
     /**
-     * @Assert\NotBlank
      * @ORM\Column(type="date")
      */
-    private $annee_edition;
+    private $anneeEdition;
 
     public function getId(): ?int
     {
@@ -31,12 +30,12 @@ class Dictionnaire extends Volume
 
     public function getAnneeEdition(): ?\DateTimeInterface
     {
-        return $this->annee_edition;
+        return $this->anneeEdition;
     }
 
-    public function setAnneeEdition(\DateTimeInterface $annee_edition): self
+    public function setAnneeEdition(\DateTimeInterface $anneeEdition): self
     {
-        $this->annee_edition = $annee_edition;
+        $this->anneeEdition = $anneeEdition;
 
         return $this;
     }

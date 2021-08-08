@@ -24,7 +24,7 @@ class LivresController extends AbstractController
             $em->persist($livre); // On confie notre entité à l'entity manager (on persist l'entité)
             $em->flush(); // On execute la requete
 
-            return $this->redirectToRoute('livres');
+            return $this->redirectToRoute('livreList');
         }
 
         return $this->render('livres/ajoutLiv.html.twig', [
@@ -32,7 +32,7 @@ class LivresController extends AbstractController
         ]);
     }
 
-    #[Route('/livres', name: 'livreList', methods: 'GET')]
+    #[Route('/livre', name: 'livreList', methods: 'GET')]
     public function list(LivresRepository $livRepository): Response
     {
         return $this->render('livres/tabLiv.html.twig', ['adherent' => $livRepository->findAll()]);
@@ -69,14 +69,4 @@ class LivresController extends AbstractController
 
         return $this->redirectToRoute('livres');
     }
-
-    /*public function index(): Response
-    {
-        $livre = new Livres();
-        $form = $this->createForm(LivresType::class, $livre);
-
-        return $this->render('livres/index.html.twig', [
-            'form' => $form->createView()
-        ]);
-    } */
 }

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\AdherentRepository;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -40,15 +41,15 @@ class Adherent
 
     /**
      * @Assert\NotBlank
-     * @ORM\Column(type="date")
-     */
-    private $date_naiss;
-
-    /**
-     * @Assert\NotBlank
      * @ORM\OneToMany(targetEntity=Emprunt::class, mappedBy="adherent")
      */
     private $livreEmprunt;
+
+    /**
+     * @Assert\NotBlank
+     * @ORM\Column(type="date")
+     */
+    private $datenaiss;
 
     public function __construct()
     {
@@ -96,14 +97,14 @@ class Adherent
         return $this;
     }
 
-    public function getDateNaiss(): ?\DateTimeInterface
+    public function getDatenaiss(): ?\DateTimeInterface
     {
-        return $this->date_naiss;
+        return $this->datenaiss;
     }
 
-    public function setDateNaiss(\DateTimeInterface $date_naiss): self
+    public function setDatenaiss(\DateTimeInterface $datenaiss): self
     {
-        $this->date_naiss = $date_naiss;
+        $this->datenaiss = $datenaiss;
 
         return $this;
     }

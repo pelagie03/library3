@@ -6,6 +6,7 @@ use App\Entity\Adherent;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,9 +19,12 @@ class AdherentType extends AbstractType
             ->add('matricule', TextType::class, ['required' => true])
             ->add('nom', TextType::class, ['required' => true])
             ->add('prenom', TextType::class, ['required' => true])
-            ->add('date_naiss', BirthdayType::class, [
-                'placeholder' => 'Choisissez une date'], [
+            ->add('datenaiss', BirthdayType::class, [
                 'required' => true])
+            ->add('save', SubmitType::class, [
+                'label' => "Enregistrer",
+                'attr' => ['class' => 'btn btn-square btn-success']
+            ])
         ;
     }
 

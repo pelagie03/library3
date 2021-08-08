@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Journal;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,6 +17,10 @@ class JournalType extends AbstractType
         $builder
             ->add('titre', TextType::class, ['required' => true])
             ->add('numparution', IntegerType::class, ['required' => true])
+            ->add('save', SubmitType::class, [
+                'label' => "Enregistrer",
+                'attr' => ['class' => 'btn btn-square btn-success']
+            ])
         ;
     }
 
