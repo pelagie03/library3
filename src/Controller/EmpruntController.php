@@ -32,7 +32,7 @@ class EmpruntController extends AbstractController
         ]);
     }
 
-    #[Route('/livres', name: 'empList', methods: 'GET')]
+    #[Route('/livreEmp', name: 'empList', methods: 'GET')]
     public function listEmp(EmpruntRepository $empRepository): Response
     {
         return $this->render('emprunt/index.html.twig', ['emprunt' => $empRepository->findAll()]);

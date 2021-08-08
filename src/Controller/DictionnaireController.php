@@ -26,7 +26,7 @@ class DictionnaireController extends AbstractController
             return new Response('SUCCES!!!');
         }
 
-        return $this->render('document/index.html.twig', [
+        return $this->render('dictionnaire/index.html.twig', [
             'form' => $form->createView()
         ]);
     }
