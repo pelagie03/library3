@@ -16,7 +16,7 @@ class JournalController extends AbstractController
     public function ajoutJournal(Request $request)
     {
         $journal = new Journal();
-        $form = $this->createForm(JournalType::class);
+        $form = $this->createForm(JournalType::class, $journal);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
