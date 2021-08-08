@@ -1,128 +1,130 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}DOCUMENTS &mdash; {{ parent() }}{% endblock %}
+{% block title %}DOCUMENTS &mdash;
+	{{ parent() }}
+{% endblock %}
 
 {% block entête %}
-{% block navigation %}
-                            <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                                <li><a href="accueil.html"><span>ACCUEIL</span></a></li>
-                                <li><a href="livre.html"><span>LIVRES</span></a></li>
-                                <li class="has-children">
-                                    <a href="adherent.html"><span>ADHERENTS</span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">LISTE DES ADHERENTS</a></li>
-                                        <li><a href="#">INSCRIPTION</a></li>
-                                        <li><a href="#">EMPRUNTS</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-children active">
-                                    <a href="document.html"><span>DOCUMENTS</span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">JOURNAL</a></li>
-                                        <li><a href="#">VOLUME</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+	{% block navigation %}
+		<ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+			<li>
+				<a href="accueil.html">
+					<span>ACCUEIL</span>
+				</a>
+			</li>
+			<li>
+				<a href="livre.html">
+					<span>LIVRES</span>
+				</a>
+			</li>
+			<li class="has-children">
+				<a href="adherent.html">
+					<span>ADHERENTS</span>
+				</a>
+				<ul class="dropdown">
+					<li>
+						<a href="#">LISTE DES ADHERENTS</a>
+					</li>
+					<li>
+						<a href="#">INSCRIPTION</a>
+					</li>
+					<li>
+						<a href="#">EMPRUNTS</a>
+					</li>
+				</ul>
+			</li>
+			<li class="has-children active">
+				<a href="document.html">
+					<span>DOCUMENTS</span>
+				</a>
+				<ul class="dropdown">
+					<li>
+						<a href="#">JOURNAL</a>
+					</li>
+					<li>
+						<a href="#">VOLUME</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
 
-{% endblock %}
+	{% endblock %}
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <!--Espace Journal-->
-    <div class="row">
-        <!--Formulaire ajout de journal-->
-        <div class="col">
-            {% include "includes/jnl_form.html.twig" %}
-        </div>
-        <!--Tableau: liste des journaux-->
-        <div class="col">
-            <table class="table">
-                <caption>Liste des journaux</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">N°</th>
-                        <th scope="col">Titre</th>
-                        <th scope="col">Numéro de parution</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+	<div
+		class="container-fluid">
+		<!--Espace Journal-->
+		<div
+			class="row">
+			<h3>Liste des journaux</h3>
+			<!--Tableau: liste des journaux-->
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">N°</th>
+						<th scope="col">Titre</th>
+						<th scope="col">Numéro de parution</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
 
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!--Espace document_bd_dico-->
-    <div class="row">
-        <!--formulaire: ajout de document_bd_dico-->
-        <div class="col">
-        <!--formulaire: ajout de document_bd-->
-            <div class="row">
-                <h3>Ajouter une bande dessinée</h3>
-                {% include "includes/bd_form.html.twig" %}
-            </div>
-            <!--formulaire: ajout de document_dico-->
-            <div class="row">
-                <h3>Ajouter un document</h3>
-                {% include "includes/dico_form.html.twig" %}
-            </div>
-        </div>
-        <!--Tableau: liste des bd_dico-->
-        <div class="col">
-            <!--Tableau: liste des bd-->
-            <div class="row">
-                <table class="table">
-                    <caption>Bande-dessinée</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">N°</th>
-                            <th scope="col">Titre</th>
-                            <th scope="col">Auteur</th>
-                            <th scope="col">Dessinateur</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                        </tr>
-                    </tbody>
-                </table>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--Espace document_bd_dico-->
+		<div
+			class="row">
+			<!--Tableau: liste des bd-->
+			<div class="col">
+				<h3>Bande-dessinée</h3>
+				<table class="table">
+					
+					<thead>
+						<tr>
+							<th scope="col">N°</th>
+							<th scope="col">Titre</th>
+							<th scope="col">Auteur</th>
+							<th scope="col">Dessinateur</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+							<td>@mdo</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-            </div>
-            <!--Tableau: liste des dico-->
-            <div class="row">
-                <table class="table">
-                    <caption>Dictionnaires</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">N°</th>
-                            <th scope="col">Titre</th>
-                            <th scope="col">Auteur</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+			<!--Tableau: liste des dico-->
+			<div class="col">
+				<h3>Dictionnaires</h3>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">N°</th>
+							<th scope="col">Titre</th>
+							<th scope="col">Auteur</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
 
-                        </tr>
-                    </tbody>
-                </table>
+						</tr>
+					</tbody>
+				</table>
 
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-{% endblock %}
+			</div>
+		</div>
+	{% endblock %}

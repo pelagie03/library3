@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class EmpruntController extends AbstractController
 {
-    #[Route('/adherent', name: 'emprunt')]
+    #[Route('/emprunt', name: 'emprunt')]
     public function emprunter(Request $request): Response
     {
         $emprunt = new Emprunt();
@@ -27,7 +27,7 @@ class EmpruntController extends AbstractController
             return $this->redirectToRoute('emprunt');
         }
 
-        return $this->render('adherent/index.html.twig', [
+        return $this->render('emprunt/empAjout.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -35,10 +35,10 @@ class EmpruntController extends AbstractController
     #[Route('/livres', name: 'empList', methods: 'GET')]
     public function listEmp(EmpruntRepository $empRepository): Response
     {
-        return $this->render('emprunt/index.html.twig', ['adherent' => $empRepository->findAll()]);
+        return $this->render('emprunt/index.html.twig', ['emprunt' => $empRepository->findAll()]);
     }
 
-    #[Route('/{id}/adherent', name: 'emp_edit', methods: 'GET|POST')]
+    #[Route('/{id}/emprunt', name: 'emp_edit', methods: 'GET|POST')]
     public function prolongerDate(Request $request, Emprunt $emp): Response
     {
         $form = $this->createForm(EmpruntType::class, $emp);
@@ -50,7 +50,7 @@ class EmpruntController extends AbstractController
             return $this->redirectToRoute('emp_edit', ['id' => $emp->getId()]);
         }
 
-        return $this->render('adherent/index.html.twig', [
+        return $this->render('emprunt/editEmprunt.html.twig', [
             'emprunt' => $emp,
             'form' => $form->createView(),
         ]);

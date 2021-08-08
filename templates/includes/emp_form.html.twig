@@ -1,6 +1,5 @@
 {{ form_start(form, {'attr': {'class': 'row'}}) }}
-	<div class="input-field col s12 m12 l12">
-		
+	<div class="input-field col s12 m12 l12">		
         {{ form_label(form.adherent, 'Adhérent') }}
 		{{ form_widget(form.adherent) }}
 		<span class="error">{{ form_errors(form.adherent) }}</span>
@@ -25,11 +24,5 @@
         {{ form_label(form.date_retour, 'Date de retrait') }}
 		{{ form_widget(form.date_retour) }}
 		<span class="error">{{ form_errors(form.date_retour) }}</span>
-	</div>
-
-	<div class="input-field col s12 m12 l12">
-		<input type="submit" name="" value="Enregistrer" class="btn btn-primary">
-		<input type="submit" value= "Modifier" class="btn btn-warning">
-        <input type="button" value= "Supprimer" class="btn btn-danger">
 	</div>
 {{ form_end(form) }}

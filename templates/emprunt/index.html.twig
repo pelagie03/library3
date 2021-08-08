@@ -20,8 +20,8 @@
 					<td>{{ emprunt.date_emprunt }}</td>
 					<td>{{ emprunt.date_retour }}</td>
 					<td>
-						<a href="{{ path('emp_edit', {'date_retour': emprunt.date_retour}) }}">modifier</a>
-						<a href="{{ path('emp_del', {'adherent': emprunt.adherent, 'pret': emprunt.pret, 'date_emprunt': emprunt.date_emprunt, 'date_retour': emprunt.date_retour}) }}">supprimer</a>
+						<a href="{{ path('emp_edit', {'id': emprunt.id}) }}">prolonger</a>
+						<a href="{{ path('emp_del', {'id': emprunt.id}) }}">Rendre</a>
 					</td>
 				</tr>
 			{% else %}
@@ -36,6 +36,6 @@
 		</tbody>
 	</table>
 
-	<a href="{{ path('emp_ajout') }}">Ajouter</a>
+	<a href="{{ path('empList') }}">Ajouter</a>
 
 {% endblock %}

@@ -22,8 +22,8 @@
 					<td>{{ livres.genre }}</td>
                     <td>{{ livres.disponible }}</td>
 					<td>
-						<a href="{{ path('liv_edit', {'titre': livres.titre, 'auteur': livres.titre, 'isbn': livres.isbn, 'genre': livres.genre, 'disponible': livres.disponible}) }}">modifier</a>
-						<a href="{{ path('liv_del', {'titre': livres.titre, 'auteur': livres.titre, 'isbn': livres.isbn, 'genre': livres.genre, 'disponible': livres.disponible}) }}">supprimer</a>
+						<a href="{{ path('liv_edit', {'id' : livres.id}) }}">modifier</a>
+						<a href="{{ path('liv_del', {'id' : livres.id}) }}">supprimer</a>
 					</td>
 				</tr>
 			{% else %}
@@ -39,5 +39,5 @@
 		</tbody>
 	</table>
 
-	<a href="{{ path('liv_ajout') }}">Ajouter</a>
+	<a href="{{ path('livres') }}">Ajouter</a>
 {% endblock %}

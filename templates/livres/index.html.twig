@@ -55,27 +55,22 @@
 
 {% block content %}
 
-	<div class="container">
-		<div
-			class="row">
-
-			<!--Formulaire ajout de livre-->
-			<div class="col">
-				{% include "includes/liv_form.html.twig" %}
-			</div>
+	<div class = "container">
+		<div class = "row">
 			<!--Tableau: liste des livres-->
-			<div class="col ">
+			<div class = "col">
 				{% block livList %}
 					{% include "tabLiv.html.twig" %}
 				{% endblock %}
 			</div>
-		</div>
-		<div>
-			<!--Liste des emprunts: tableau-->
-			{% block empList %}
-				{% include "emprunt/index.html.twig" %}
-			{% endblock %}
+			<div class = "col">
+				<!--Liste des emprunts: tableau-->
+				{% block empList %}
+					{% include "emprunt/index.html.twig" %}
+				{% endblock %}
 
+			</div>
 		</div>
+
 	</div>
 {% endblock %}

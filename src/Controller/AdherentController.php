@@ -50,7 +50,7 @@ class AdherentController extends AbstractController
             return $this->redirectToRoute('adhEdit', ['id' => $adherent->getId()]);
         }
 
-        return $this->render('adherent/inscription.html.twig', [
+        return $this->render('adherent/editAdh.html.twig', [
             'adherent' => $adherent,
             'form' => $form->createView(),
         ]);
@@ -60,25 +60,13 @@ class AdherentController extends AbstractController
     public function delete(Request $request, Adherent $adherent): Response
     {
         if (!$this->isCsrfTokenValid('delete' . $adherent->getId(), $request->request->get('_token'))) {
-            return $this->redirectToRoute('adherent');
+            return $this->redirectToRoute('adhList');
         }
 
         $em = $this->getDoctrine()->getManager();
         $em->remove($adherent);
         $em->flush();
 
-        return $this->redirectToRoute('adherent');
+        return $this->redirectToRoute('adhList');
     }
-
-    /*public function index(): Response
-    {
-        $adh = new Adherent();
-        $form = $this->createForm(AdherentType::class, $adh);
-        return $this->render('adherent/inscription.html.twig', [
-            'form' => $form->createView()
-        ]);
-        return $this->render('adherent/index.html.twig', [
-            'controller_name' => 'AdherentController',
-        ]);
-    }*/
 }

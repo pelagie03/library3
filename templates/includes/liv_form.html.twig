@@ -1,15 +1,15 @@
 {{ form_start(form, {'attr': {'class': 'row'}}) }}
-<div class="input-field col s12 m12 l12">
-	{{ form_widget(form.titre) }}
-	{{ form_label(form.titre, 'Titre') }}
-	<span class="error">{{ form_errors(form.titre) }}</span>
-</div>
+	<div class="input-field col s12 m12 l12">
+		{{ form_widget(form.titre) }}
+		{{ form_label(form.titre, 'Titre') }}
+		<span class="error">{{ form_errors(form.titre) }}</span>
+	</div>
 
-<div class="input-field col s12 m6 l6">
-	
-	{{ form_label(form.auteur, 'Nom de l\'auteur') }}
-	{{ form_widget(form.auteur, {'attr': {'placeholder': 'Boutons et dentelles'}}) }}
-	<span class="error">{{ form_errors(form.auteur) }}</span>
+	<div class="input-field col s12 m6 l6">
+
+		{{ form_label(form.auteur, 'Nom de l\'auteur') }}
+		{{ form_widget(form.auteur, {'attr': {'placeholder': 'Boutons et dentelles'}}) }}
+		<span class="error">{{ form_errors(form.auteur) }}</span>
 	</div>
 
 	<div class="input-field col s12 m6 l6">
@@ -33,9 +33,4 @@
       	</p>
 	</div>
 
-	<div class="input-field col s12 m12 l12">
-		<input type="submit" name="" value="Enregistrer" class="btn btn-primary">
-		<input type="submit" value= "Modifier" class="btn btn-warning">
-        <input type="button" value= "Supprimer" class="btn btn-danger">
-	</div>
 {{ form_end(form) }}

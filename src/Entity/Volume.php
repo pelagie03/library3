@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass=VolumeRepository::class)
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="typeV", type="string")
- * @ORM\DiscriminatorMap({"volume" = "Volume", "bd" = "BD", "livre" = "Livres", "dictionnaire" = "Dictionnaire"})
+ * @ORM\DiscriminatorMap({"volume" = "Volume", "bd" = "Bd", "livre" = "Livres", "dictionnaire" = "Dictionnaire"})
  */
 class Volume extends Document
 {

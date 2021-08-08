@@ -27,7 +27,7 @@ class LivresController extends AbstractController
             return $this->redirectToRoute('livres');
         }
 
-        return $this->render('livres/index.html.twig', [
+        return $this->render('livres/ajoutLiv.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -50,7 +50,7 @@ class LivresController extends AbstractController
             return $this->redirectToRoute('livEdit', ['id' => $livre->getId()]);
         }
 
-        return $this->render('livres/index.html.twig', [
+        return $this->render('livres/editLiv.html.twig', [
             'livre' => $livre,
             'form' => $form->createView(),
         ]);

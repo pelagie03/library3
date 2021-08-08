@@ -20,16 +20,8 @@
                     <td>{{ adherent.prenom }}</td>
                     <td>{{ adherent.date_naiss }}</td>
 					<td>
-						<a href="{{ path('adh_edit', {'matricule': adherent.matricule,
-                                                    'nom': adherent.nom,
-                                                    'prenom': adherent.prenom,
-                                                    'date_naiss': adherent.date_naiss}) 
-                                }}">modifier</a>
-						<a href="{{ path('adh_del', {'matricule': adherent.matricule,
-                                                    'nom': adherent.nom,
-                                                    'prenom': adherent.prenom,
-                                                    'date_naiss': adherent.date_naiss})
-                                }}">supprimer</a>
+						<a href="{{ path('adhEdit', {'id' : adherent.id}) }}">modifier</a>
+						<a href="{{ path('adh_del', {'id' : adherent.id}) }}">supprimer</a>
 					</td>
 				</tr>
 			{% else %}
@@ -44,5 +36,5 @@
 		</tbody>
 	</table>
 
-	<a href="{{ path('adh_ajout') }}">Ajouter</a>
+	<a href="{{ path('adh_ajout') }}">AJOUTER</a>
 {% endblock %}
